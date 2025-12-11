@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Practical Viva Questions - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .practical {
+            margin-bottom: 40px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .practical:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .practical-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .practical-header h2 {
+            font-size: 1.5em;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        
+        .practical.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .practical-body {
+            display: none;
+            padding: 25px;
+            background: #f8f9fa;
+        }
+        
+        .practical.active .practical-body {
+            display: block;
+        }
+        
+        .application {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .application h3 {
+            color: #856404;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+        
+        .application p {
+            color: #533f03;
+            font-weight: 500;
+        }
+        
+        .question-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .most-likely {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+        
+        .moderate {
+            background: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffc107;
+        }
+        
+        .low {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+        
+        .question-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        .question-item p {
+            color: #555;
+            margin-left: 15px;
+            line-height: 1.8;
+        }
+        
+        .search-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        #searchInput {
+            width: 80%;
+            max-width: 600px;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        #searchInput:focus {
+            border-color: #764ba2;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .expand-all-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        
+        .expand-all-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .search-container, .expand-all-btn {
+                display: none;
+            }
+            .practical-body {
+                display: block !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 15px;
+            }
+            #searchInput {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 DSA Practical Viva Questions</h1>
+            <p>Complete Answer Bank - All 10 Practicals</p>
+        </header>
+        
+        <div class="content">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="🔍 Search questions, answers, or topics...">
+            </div>
+            
+            <button class="expand-all-btn" onclick="toggleAll()">Expand/Collapse All</button>
+            
+            <!-- PRACTICAL 1 -->
+            <div class="practical active">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 1: Undo/Redo using Stack</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>text editors, IDEs, Photoshop</strong> to revert and reapply changes.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What is a stack?</strong>
+                            <p>A LIFO (Last In First Out) data structure where the last element added is the first one to be removed.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. How does undo/redo work?</strong>
+                            <p>Undo uses a <strong>stack of previous states</strong>; when you undo, the current state is moved to a redo stack. Redo retrieves from the redo stack and pushes back to undo stack.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. Why clear redo after a new edit?</strong>
+                            <p>Because the redo history becomes invalid after a new change is made. You can't redo something that was undone if you've made a different change.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. LIFO vs FIFO?</strong>
+                            <p>LIFO → Last element is removed first (Stack)<br>
+                            FIFO → First element is removed first (Queue)</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. Stack operations?</strong>
+                            <p>• Push - Add element to top<br>
+                            • Pop - Remove element from top<br>
+                            • Peek - View top element without removing<br>
+                            • isEmpty - Check if stack is empty</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Can linked list implement a stack?</strong>
+                            <p>Yes, using a linked list where insertion and deletion happen at the head (O(1) operations).</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>7. Time complexity of push/pop?</strong>
+                            <p>O(1) - Constant time for both operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 2 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 2: Queue Using Stack</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>task scheduling, printer queues, OS process management</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. How do you make a queue using two stacks?</strong>
+                            <p>• Enqueue → Push element into stack1<br>
+                            • Dequeue → If stack2 is empty, move all elements from stack1 to stack2 (reversing order), then pop from stack2.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. Why queue is FIFO?</strong>
+                            <p>Because the first inserted element is processed first, like a real-world queue/line.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>3. Enqueue vs Dequeue?</strong>
+                            <p>• Enqueue - Insert element at rear<br>
+                            • Dequeue - Remove element from front</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>4. How many stacks needed?</strong>
+                            <p>Two stacks - one for enqueue operations, one for dequeue operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>5. Time complexity?</strong>
+                            <p>Worst-case: O(n) for a single dequeue<br>
+                            Amortized: O(1) - each element is moved only once from stack1 to stack2.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 3 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 3: Singly Linked List – Coffee Shop</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>billing systems</strong>, dynamic lists, memory-efficient record keeping.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What is a singly linked list?</strong>
+                            <p>A dynamic data structure where each node contains data and a pointer to the next node. The last node points to NULL.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. How do you traverse it?</strong>
+                            <p>Start from the head node and follow the next pointers until you reach NULL.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. How to find total/max/min sale?</strong>
+                            <p>Traverse the list:<br>
+                            • Total - Accumulate all bill values<br>
+                            • Max - Track highest value seen<br>
+                            • Min - Track lowest value seen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. Array vs Linked List?</strong>
+                            <p>• Array: Fixed size, contiguous memory, fast random access O(1)<br>
+                            • Linked List: Dynamic size, non-contiguous memory, sequential access O(n)</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. What is a node?</strong>
+                            <p>A node is a structure containing:<br>
+                            • Data field (stores the actual value)<br>
+                            • Pointer field (points to next node)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Why use malloc?</strong>
+                            <p>To dynamically allocate memory for nodes at runtime from the heap, allowing flexible list size.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 4 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 4: Circular Linked List – Music Playlist</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>media players, round-robin scheduling, continuous playback systems</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What is a circular linked list?</strong>
+                            <p>A linked list where the last node points back to the first node (head) instead of NULL, forming a circle.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. Why suitable for playlist?</strong>
+                            <p>Allows infinite looping of songs - when the last song ends, it automatically goes back to the first song.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. How to detect last node?</strong>
+                            <p>Check if <code>node->next == head</code>. In circular list, the last node points to head.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. Insert at end?</strong>
+                            <p>1. Traverse to find last node (where next == head)<br>
+                            2. Create new node<br>
+                            3. Set last->next = new node<br>
+                            4. Set new node->next = head</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. Traversal difference?</strong>
+                            <p>In circular list, you stop when you return to the head node, not when you reach NULL. Use do-while loop to ensure at least one traversal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Convert singly list to circular?</strong>
+                            <p>Traverse to the last node and set <code>last->next = head</code> instead of NULL.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 5 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 5: Hashing</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>databases, dictionaries, password hashing, compiler symbol tables</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What is hashing?</strong>
+                            <p>A technique of mapping keys to array indices using a hash function for fast data retrieval.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. What is a hash function?</strong>
+                            <p>A function that converts a key (number, string, etc.) into an array index. Example: <code>index = key % table_size</code></p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. What is a collision?</strong>
+                            <p>When two different keys produce the same hash value/index.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. Collision handling methods?</strong>
+                            <p>• <strong>Chaining</strong> - Store multiple elements at same index using linked list<br>
+                            • <strong>Linear Probing</strong> - Find next empty slot linearly<br>
+                            • <strong>Quadratic Probing</strong> - Use quadratic function to find slot<br>
+                            • <strong>Double Hashing</strong> - Use second hash function</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. Load factor?</strong>
+                            <p>Load Factor = (Number of elements) / (Table size)<br>
+                            Indicates how full the hash table is. Higher load factor means more collisions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Chaining vs Open addressing?</strong>
+                            <p>• Chaining uses linked lists at each index<br>
+                            • Open addressing stores all items in the table itself by probing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 6 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 6: BST – Employee Database</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>search engines, hierarchical data, searching employees by salary/ID</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What is BST?</strong>
+                            <p>Binary Search Tree - A binary tree where:<br>
+                            • Left subtree values < Node value<br>
+                            • Right subtree values > Node value<br>
+                            This property holds for all nodes.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. How to insert/search?</strong>
+                            <p>Compare the value with current node:<br>
+                            • If smaller → go left<br>
+                            • If larger → go right<br>
+                            Continue recursively until you find the position (insert) or the value (search).</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. How find max/min salary?</strong>
+                            <p>• <strong>Max</strong> → Keep going right until you reach the rightmost node<br>
+                            • <strong>Min</strong> → Keep going left until you reach the leftmost node</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. What is inorder traversal?</strong>
+                            <p>Left → Root → Right<br>
+                            Visits nodes in ascending sorted order for BST.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. Why inorder gives sorted result?</strong>
+                            <p>Because of the BST ordering property - left children are smaller, so visiting left first, then root, then right produces sorted output.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. BST vs Binary Tree?</strong>
+                            <p>• BST has ordering property (left < root < right)<br>
+                            • Binary tree has no such ordering, just max 2 children per node</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 7 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 7: Trie (Prefix Tree)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>search autocomplete, spell checkers, IP routing, dictionary apps</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What is a trie?</strong>
+                            <p>A tree data structure for storing strings character by character, where each path from root to leaf represents a word.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. Why trie used?</strong>
+                            <p>Fast prefix search and dictionary operations. Can find all words with a given prefix efficiently.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. Children count in a node?</strong>
+                            <p>Typically 26 for lowercase English letters (a-z). Each node has an array of 26 pointers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. How insert/search works?</strong>
+                            <p>Move level by level through characters:<br>
+                            • If child node for character doesn't exist, create it<br>
+                            • Move to that child<br>
+                            • Mark end of word when done</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. Trie vs BST?</strong>
+                            <p>• Trie processes strings character by character<br>
+                            • BST compares entire keys/words<br>
+                            • Trie is faster for prefix operations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. What is prefix matching?</strong>
+                            <p>Checking if a word starts with a given prefix. For example, "cat", "car", "care" all have prefix "ca".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 8 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 8: Single Node Failure Detection in Network</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>network reliability, router failure detection, fault-tolerant systems</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What happens when a node fails?</strong>
+                            <p>Some nodes may become unreachable from others, potentially disconnecting the network into multiple components.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. What traversal used?</strong>
+                            <p>DFS (Depth First Search) or BFS (Breadth First Search) to check connectivity.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. How to check connectivity?</strong>
+                            <p>Start from one node (excluding the failed node) → traverse the graph → count reachable nodes. If count equals (total - 1), network is still connected.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. Adjacency list/matrix?</strong>
+                            <p>Two ways to represent graphs:<br>
+                            • <strong>Adjacency Matrix</strong> - 2D array, matrix[i][j] = 1 if edge exists<br>
+                            • <strong>Adjacency List</strong> - Array of linked lists, more space efficient for sparse graphs</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. What is connected component?</strong>
+                            <p>A group of nodes that are all reachable from each other through some path.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Real-world example?</strong>
+                            <p>If a main router fails in a network, some computers might not be able to communicate with others, breaking the network into isolated groups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 9 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 9: Cycle Detection in Graph</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Used in <strong>deadlock detection, dependency resolution, networking loops</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. How to detect cycle?</strong>
+                            <p>Using DFS:<br>
+                            • <strong>Undirected Graph</strong> - If you visit a node that's already visited and is not the parent, cycle exists<br>
+                            • <strong>Directed Graph</strong> - Use recursion stack; if you visit a node in current DFS path, cycle exists</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. What is back edge?</strong>
+                            <p>An edge that points to an ancestor node in the DFS tree. Presence of a back edge indicates a cycle.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. Directed vs Undirected cycle?</strong>
+                            <p>• <strong>Directed</strong> - Uses recursion stack to track current path<br>
+                            • <strong>Undirected</strong> - Checks if visited node is not the parent</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. Why visited array?</strong>
+                            <p>To avoid infinite loops and redundant visits. Marks which nodes have already been explored.</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. What is recursion stack?</strong>
+                            <p>Tracks the current path being explored in DFS. Used in directed graphs to detect if we're visiting a node that's already in the current path (indicating a cycle).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Can BFS detect cycles?</strong>
+                            <p>Yes, in undirected graphs using parent tracking. For directed graphs, BFS with in-degree counting (Kahn's algorithm) can be used.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRACTICAL 10 -->
+            <div class="practical">
+                <div class="practical-header" onclick="togglePractical(this)">
+                    <h2>✅ PRACTICAL 10: LeetCode Challenges</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practical-body">
+                    <div class="application">
+                        <h3>💡 Application</h3>
+                        <p>Improves <strong>problem-solving, DSA concepts, interview preparation</strong>.</p>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title most-likely">🟩 Most Likely Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>1. What problems did you solve?</strong>
+                            <p><em>Answer with your specific problems, for example:</em><br>
+                            "I solved Two Sum, Valid Parentheses, Merge Two Sorted Lists, Binary Tree Inorder Traversal, etc."</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>2. Which data structures used?</strong>
+                            <p>Arrays, Hash Maps, Stacks, Queues, Linked Lists, Trees, Graphs, Dynamic Programming arrays (depending on the problems you solved).</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>3. Approach used?</strong>
+                            <p><em>Explain in 2-3 lines for a specific problem:</em><br>
+                            "For Two Sum, I used a hash map to store complements. For each number, I checked if its complement exists in the map, achieving O(n) time complexity."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title moderate">🟨 Moderate Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>4. Time/space complexity?</strong>
+                            <p>Give Big-O values for your solutions:<br>
+                            • Two Sum: O(n) time, O(n) space<br>
+                            • Binary Search: O(log n) time, O(1) space<br>
+                            • Merge Sort: O(n log n) time, O(n) space</p>
+                        </div>
+                        
+                        <div class="question-item">
+                            <strong>5. Concepts used?</strong>
+                            <p>Sliding Window, Two Pointers, DFS, BFS, Hash Maps, Recursion, Dynamic Programming, Backtracking, Greedy, etc. (based on problems solved).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question-section">
+                        <span class="section-title low">🟥 Low Priority Questions</span>
+                        
+                        <div class="question-item">
+                            <strong>6. Contest participation?</strong>
+                            <p>Answer honestly about your LeetCode contest participation or practice patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        function togglePractical(header) {
+            const practical = header.parentElement;
+            practical.classList.toggle('active');
+        }
+        
+        let allExpanded = true;
+        function toggleAll() {
+            const practicals = document.querySelectorAll('.practical');
+            allExpanded = !allExpanded;
+            practicals.forEach(practical => {
+                if (allExpanded) {
+                    practical.classList.add('active');
+                } else {
+                    practical.classList.remove('active');
+                }
+            });
+        }
+        
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const practicals = document.querySelectorAll('.practical');
+            
+            practicals.forEach(practical => {
+                const text = practical.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    practical.style.display = 'block';
+                    if (searchTerm.length > 0) {
+                        practical.classList.add('active');
+                    }
+                } else {
+                    practical.style.display = 'none';
+                }
+            });
+        });
+        
+        // Print functionality
+        function printNotes() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
