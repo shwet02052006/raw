@@ -1,0 +1,1020 @@
+1=Develop and demonstrate the usage of inline, internal and external style sheet using
+CSS.
+
+
+Index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Example</title>
+
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: purple;
+            text-decoration: underline;
+        }
+
+        .internal-box {
+            background-color: lightyellow;
+            padding: 10px;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- External CSS applied -->
+    <h1>External CSS Example</h1>
+    <p>This paragraph uses External CSS.</p>
+
+    <!-- Internal CSS applied -->
+    <h2>Internal CSS Example</h2>
+    <div class="internal-box">
+        This box is styled using Internal CSS.
+    </div>
+
+    <!-- Inline CSS example -->
+    <h3 style="color: red; font-size: 24px;">Inline CSS Example</h3>
+    <p style="background-color: lightblue; padding: 5px;">
+        This paragraph uses Inline CSS.
+    </p>
+
+</body>
+</html>
+
+
+
+Style.css
+
+/* External CSS */
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    color: green;
+}
+
+
+
+
+
+
+
+
+
+
+2.Design an HTML5 page that displays a college timetable using the &lt;table&gt; tag with
+proper headings.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>College Timetable</h1>
+
+    <table>
+        <caption>Weekly Class Schedule</caption>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>9:00 AM - 10:00 AM</td>
+                <td>Maths</td>
+                <td>Physics</td>
+                <td>Chemistry</td>
+                <td>Maths</td>
+                <td>Computer Science</td>
+            </tr>
+            <tr>
+                <td>10:00 AM - 11:00 AM</td>
+                <td>English</td>
+                <td>Maths</td>
+                <td>English</td>
+                <td>Physics</td>
+                <td>Electronics</td>
+            </tr>
+            <tr>
+                <td>11:00 AM - 12:00 PM</td>
+                <td>History</td>
+                <td>Chemistry</td>
+                <td>Computer Science</td>
+                <td>History</td>
+                <td>Maths</td>
+            </tr>
+            <tr>
+                <td>12:00 PM - 1:00 PM</td>
+                <td>Lunch Break</td>
+                <td>Lunch Break</td>
+                <td>Lunch Break</td>
+                <td>Lunch Break</td>
+                <td>Lunch Break</td>
+            </tr>
+            <tr>
+                <td>1:00 PM - 2:00 PM</td>
+                <td>Physics</td>
+                <td>Computer Science</td>
+                <td>Maths</td>
+                <td>Chemistry</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>2:00 PM - 3:00 PM</td>
+                <td>Chemistry</td>
+                <td>Electronics</td>
+                <td>History</td>
+                <td>Computer Science</td>
+                <td>Physics</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+3. Build an HTML5 registration form using text fields, radio buttons, checkboxes,
+dropdowns, and a submit button.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <div class="form-container">
+        <form action="#" method="post">
+
+            <!-- Full Name -->
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <!-- Email Address -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+            <!-- Gender Radio Buttons -->
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+
+            <!-- Hobbies Checkboxes -->
+            <label>Hobbies:</label>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">Reading</label>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">Sports</label>
+            <input type="checkbox" id="music" name="hobbies" value="music">
+            <label for="music">Music</label>
+
+            <!-- Country Dropdown -->
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="usa">United States</option>
+                <option value="india">India</option>
+                <option value="uk">United Kingdom</option>
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+            </select>
+
+            <!-- Bio Textarea -->
+            <label for="bio">Short Bio:</label>
+            <textarea id="bio" name="bio" rows="4" placeholder="Tell us a little about yourself"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+    <div class="form-footer">
+        <p>Already have an account? <a href="#">Login here</a></p>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+4. Demonstrate the use of &lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, and &lt;article&gt; in HTML5 by
+creating a blog layout.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog</title>
+    <style>
+        body {
+            background-color: lightblue; /* simple single background color */
+            font-family: Arial, sans-serif;
+        }
+
+        header, section, article, footer {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        header, footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Blog</h1>
+        <p>Welcome to my simple blog</p>
+    </header>
+
+    <!-- Main Section -->
+    <section>
+        <article>
+            <h2>HTML5 Introduction</h2>
+            <p>HTML5 is the latest version of HTML used to create web pages.</p>
+        </article>
+
+        <article>
+            <h2>Why Learn HTML?</h2>
+            <p>HTML is easy to learn and forms the basic structure of websites.</p>
+        </article>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Blog</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+5. Write a JSON file that stores details of 5 students (name, roll number, course) and
+print them using JavaScript
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students JSON Example</title>
+</head>
+<body>
+
+    <h1>Student Details</h1>
+    <div id="student-list"></div>
+
+    <script>
+        // JSON data for 5 students
+        const students = [
+            { "name": "Alice", "rollNumber": "101", "course": "Math" },
+            { "name": "Bob", "rollNumber": "102", "course": "Physics" },
+            { "name": "Charlie", "rollNumber": "103", "course": "Chemistry" },
+            { "name": "David", "rollNumber": "104", "course": "Biology" },
+            { "name": "Eva", "rollNumber": "105", "course": "Computer Science" }
+        ];
+
+        // Get the div to display students
+        const studentListDiv = document.getElementById('student-list');
+
+        // Loop through students and display their details
+        students.forEach(student => {
+            const studentInfo = document.createElement('p');
+            studentInfo.textContent = `Name: ${student.name}, Roll Number: ${student.rollNumber}, Course: ${student.course}`;
+            studentListDiv.appendChild(studentInfo);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+6. Create a JSON structure to store movie information (title, year, genre) and print them
+using JavaScript
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies JSON Example</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #movie-list p {
+            background-color: #ffffff; /* White background for each movie */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Movie List</h1>
+    <div id="movie-list"></div>
+
+    <script>
+        const movies = [
+            { "title": "Inception", "year": 2010, "genre": "Sci-Fi" },
+            { "title": "The Dark Knight", "year": 2008, "genre": "Action" },
+            { "title": "Interstellar", "year": 2014, "genre": "Sci-Fi" },
+            { "title": "Titanic", "year": 1997, "genre": "Romance" },
+            { "title": "Avengers: Endgame", "year": 2019, "genre": "Action" }
+        ];
+
+        const movieListDiv = document.getElementById('movie-list');
+
+        movies.forEach(movie => {
+            const movieInfo = document.createElement('p');
+            movieInfo.textContent = `Title: ${movie.title}, Year: ${movie.year}, Genre: ${movie.genre}`;
+            movieListDiv.appendChild(movieInfo);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+7. Store 5 products details in JSON format and print them using JavaScript and print
+them using JavaScript.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products JSON Example</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #product-list p {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product List</h1>
+    <div id="product-list"></div>
+
+    <script>
+        // JSON array of products
+        const products = [
+            { "name": "Laptop", "price": 1200, "category": "Electronics" },
+            { "name": "Smartphone", "price": 800, "category": "Electronics" },
+            { "name": "Table", "price": 150, "category": "Furniture" },
+            { "name": "Shoes", "price": 90, "category": "Clothing" },
+            { "name": "Watch", "price": 250, "category": "Accessories" }
+        ];
+
+        const productListDiv = document.getElementById('product-list');
+
+        // Loop through the products and display them
+        products.forEach(product => {
+            const productInfo = document.createElement('p');
+            productInfo.textContent = `Name: ${product.name}, Price: $${product.price}, Category: ${product.category}`;
+            productListDiv.appendChild(productInfo);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+8. Write an XML file representing a library with book title, author, and year and validate
+it using External DTD.
+
+
+
+library.dtd  
+
+<!ELEMENT library (book+)>
+<!ELEMENT book (title, author, year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+
+
+library.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library SYSTEM "library.dtd">
+<library>
+    <book>
+        <title>Harry Potter</title>
+        <author>J.K. Rowling</author>
+        <year>1997</year>
+    </book>
+    <book>
+        <title>The Hobbit</title>
+        <author>J.R.R. Tolkien</author>
+        <year>1937</year>
+    </book>
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <year>1949</year>
+    </book>
+</library>
+
+
+
+
+
+
+
+9.Create an XML file for customer details and validate it using Internal DTD.
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers [
+    <!ELEMENT customers (customer+)>
+    <!ELEMENT customer (id, name, email, phone)>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+]>
+<customers>
+    <customer>
+        <id>101</id>
+        <name>John Doe</name>
+        <email>john.doe@example.com</email>
+        <phone>1234567890</phone>
+    </customer>
+    <customer>
+        <id>102</id>
+        <name>Jane Smith</name>
+        <email>jane.smith@example.com</email>
+        <phone>9876543210</phone>
+    </customer>
+</customers>
+
+
+
+
+
+
+
+
+10. Write a JavaScript program to check whether a number is even or odd.
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd Checker</title>
+    <script>
+        function checkEvenOdd() {
+            // Get the value entered by the user
+            let number = document.getElementById("num").value;
+            
+            // Convert the input to a number
+            number = Number(number);
+
+            // Check if the input is a valid number
+            if (isNaN(number)) {
+                document.getElementById("result").innerHTML = "Please enter a valid number!";
+                return;
+            }
+
+            // Check if the number is even or odd
+            if (number % 2 === 0) {
+                document.getElementById("result").innerHTML = number + " is Even.";
+            } else {
+                document.getElementById("result").innerHTML = number + " is Odd.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Even or Odd Number Checker</h2>
+    <input type="text" id="num" placeholder="Enter a number">
+    <button onclick="checkEvenOdd()">Check</button>
+    <p id="result"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+11. Write JavaScript to calculate simple interest using user input values.
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+    <script>
+        function calculateInterest() {
+            // Get values from input fields
+            let principal = Number(document.getElementById("principal").value);
+            let rate = Number(document.getElementById("rate").value);
+            let time = Number(document.getElementById("time").value);
+
+            // Check for valid inputs
+            if (isNaN(principal) || isNaN(rate) || isNaN(time) || principal < 0 || rate < 0 || time < 0) {
+                document.getElementById("result").innerHTML = "Please enter valid positive numbers!";
+                return;
+            }
+
+            // Simple Interest formula: SI = (P * R * T) / 100
+            let simpleInterest = (principal * rate * time) / 100;
+
+            // Display result
+            document.getElementById("result").innerHTML = 
+                `Simple Interest = ${simpleInterest.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Interest Calculator</h2>
+    <label>Principal Amount: </label>
+    <input type="text" id="principal" placeholder="Enter principal"><br><br>
+
+    <label>Rate of Interest (%): </label>
+    <input type="text" id="rate" placeholder="Enter rate"><br><br>
+
+    <label>Time (years): </label>
+    <input type="text" id="time" placeholder="Enter time"><br><br>
+
+    <button onclick="calculateInterest()">Calculate</button>
+
+    <p id="result"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+12. Develop a JavaScript program to swap two numbers without using a third variable.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swap Two Numbers</title>
+    <script>
+        function swapNumbers() {
+            // Get values from input fields
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            // Display original values
+            document.getElementById("before").innerHTML = `Before Swapping: a = ${a}, b = ${b}`;
+
+            // Swap without third variable using arithmetic
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            // Display swapped values
+            document.getElementById("after").innerHTML = `After Swapping: a = ${a}, b = ${b}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Swap Two Numbers Without Using Third Variable</h2>
+    <label>Number 1: </label>
+    <input type="text" id="num1" placeholder="Enter first number"><br><br>
+
+    <label>Number 2: </label>
+    <input type="text" id="num2" placeholder="Enter second number"><br><br>
+
+    <button onclick="swapNumbers()">Swap</button>
+
+    <p id="before"></p>
+    <p id="after"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+13 Write JavaScript to generate a multiplication table of any number entered by the user.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table Generator</title>
+    <script>
+        function generateTable() {
+            // Get the number entered by the user
+            let num = Number(document.getElementById("number").value);
+
+            // Check if input is a valid number
+            if (isNaN(num)) {
+                document.getElementById("table").innerHTML = "Please enter a valid number!";
+                return;
+            }
+
+            // Generate multiplication table
+            let result = `<h3>Multiplication Table of ${num}</h3>`;
+            result += "<ul>";
+            for (let i = 1; i <= 10; i++) {
+                result += `<li>${num} × ${i} = ${num * i}</li>`;
+            }
+            result += "</ul>";
+
+            // Display the table
+            document.getElementById("table").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Multiplication Table Generator</h2>
+    <label>Enter a number: </label>
+    <input type="text" id="number" placeholder="Enter number"><br><br>
+    <button onclick="generateTable()">Generate Table</button>
+
+    <div id="table"></div>
+</body>
+</html>
+
+
+
+
+14. Write JavaScript to find the largest of three numbers.
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Largest Number</title>
+    <script>
+        function findLargest() {
+            // Get numbers from input fields
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let num3 = Number(document.getElementById("num3").value);
+
+            // Check for valid numbers
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                document.getElementById("result").innerHTML = "Please enter valid numbers!";
+                return;
+            }
+
+            // Find the largest number
+            let largest;
+            if (num1 >= num2 && num1 >= num3) {
+                largest = num1;
+            } else if (num2 >= num1 && num2 >= num3) {
+                largest = num2;
+            } else {
+                largest = num3;
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = `The largest number is ${largest}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Find the Largest of Three Numbers</h2>
+    <label>Number 1: </label>
+    <input type="text" id="num1" placeholder="Enter first number"><br><br>
+
+    <label>Number 2: </label>
+    <input type="text" id="num2" placeholder="Enter second number"><br><br>
+
+    <label>Number 3: </label>
+    <input type="text" id="num3" placeholder="Enter third number"><br><br>
+
+    <button onclick="findLargest()">Find Largest</button>
+
+    <p id="result"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+15. Demonstrate confirm(), alert(), and prompt() with simple examples.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Alert, Prompt, Confirm Demo</title>
+    <script>
+        function demoJSFunctions() {
+            // 1. alert() - displays a message
+            alert("Welcome to the JavaScript Demo!");
+
+            // 2. prompt() - asks the user for input
+            let name = prompt("Enter your name:");
+
+            // Check if user entered something
+            if (name) {
+                alert("Hello, " + name + "!");
+            } else {
+                alert("Hello, Guest!");
+            }
+
+            // 3. confirm() - asks for user confirmation
+            let proceed = confirm("Do you want to continue?");
+
+            if (proceed) {
+                alert("You chose to continue!");
+            } else {
+                alert("You chose to cancel!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Functions Demo</h2>
+    <button onclick="demoJSFunctions()">Run Demo</button>
+</body>
+</html>
+
+
+
+
+
+
+16. Validate a login form where:
+ Username must be at least 5 characters
+ Password must not be empty
+ Error messages must show using JavaScript
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Validation</title>
+    <script>
+        function validateForm() {
+            // Get input values
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Clear previous error messages
+            document.getElementById("error").innerHTML = "";
+
+            let messages = [];
+
+            // Validate username (at least 5 characters)
+            if (username.length < 5) {
+                messages.push("Username must be at least 5 characters long.");
+            }
+
+            // Validate password (not empty)
+            if (password === "") {
+                messages.push("Password cannot be empty.");
+            }
+
+            // Display error messages or success
+            if (messages.length > 0) {
+                document.getElementById("error").innerHTML = messages.join("<br>");
+                return false; // Prevent form submission
+            } else {
+                alert("Login successful!");
+                return true; // Allow form submission
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form onsubmit="return validateForm()">
+        <label>Username: </label>
+        <input type="text" id="username" placeholder="Enter username"><br><br>
+
+        <label>Password: </label>
+        <input type="password" id="password" placeholder="Enter password"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="error" style="color: red;"></p>
+</body>
+</html>
+
